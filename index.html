@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PostMAster</title>
+    <link rel="stylesheet" href="prism.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">PostMAster</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="#">About </a>
+              <a class="nav-link" href="#">Contact Us</a>
+            </div>
+          </div>
+        </div>
+    </nav>
+    <!-- Main Body -->
+    <div class="container ">
+      <!-- Heading -->
+      <h1 class="my-3"><b>Welcome to PostMAster</b></h1>
+      <hr>
+    <!-- form -->
+    <form>
+      <!-- URL box -->  
+      <div class="my-3 mx-2 form-group row">
+        <div class="col-3">
+          <label for="url" class="form-label"><b>URL</b></label>
+        </div>
+        <div class="col-9">
+          <input type="url" class="form-control" id="url" placeholder="Enter URL here">
+        </div>
+      </div>
+      <!-- Request Type box -->
+      <div class="my-3 mx-2 form-group row">
+        <div class="col-3">
+          <label for="requestType" class="form-label"><b>Request Type</b></label>
+          </div>
+          <div class="col-9">
+          <div class="form-check mx-3">
+            <input class="form-check-input" type="radio" name="requestType" id="get" value="get" checked>
+              <label class="form-check-label" for="get">GET</label>
+            </div>
+            <div class="form-check mx-3">
+              <input class="form-check-input" type="radio" name="requestType" id="post" value="post">
+              <label class="form-check-label" for="post">POST</label>
+            </div>
+          </div>
+        </div>
+      <!-- Content Type box -->
+      <div class="my-3 mx-2 form-group row">
+        <div class="col-3">
+          <label for="contentType" class="form-label"><b>Content Type</b></label>
+          </div>
+          <div class="col-9">
+          <div class="form-check mx-3">
+            <input class="form-check-input" type="radio" name="contentType" id="jsonRadio" value="jsonRadio" checked>
+              <label class="form-check-label" for="jsonRadio">JSON</label>
+            </div>
+            <div class="form-check mx-3">
+              <input class="form-check-input" type="radio" name="contentType" id="parameterRadio" value="parameterRadio">
+              <label class="form-check-label" for="parameterRadio">Custom Parameters</label>
+            </div>
+          </div>
+        </div>
+        <!-- JSON Box - this will hide on clicking the parameter option in content type -->
+      <div class="my-3 mx-2 row " id="jsonBox">
+        <div class="col-3">
+          <label for="requestJsonText" class="form-label"><b>Enter Request JSON here</b></label>
+        </div>
+        <div class="col-9">
+          <textarea class="form-control" id="requestJsonText" rows="3" ></textarea>
+        </div>
+      </div>
+      <!-- Parameters box - this will hide on clicking the JSON option in content type -->
+      <div class="my-3 mx-2 row" id="parameterBox">
+        <div class="col-3">
+          <label for="" class="form-label"><b>Parameter 1</b></label>
+          </div>
+        <div class="col-3">
+          <input type="text" class="form-control" id="parameterKey1" placeholder="Parameter Key 1">
+        </div>
+        <div class="col-3">
+          <input type="text" class="form-control" id="parameterValue1" placeholder="Parameter Value 1">
+        </div>
+        <!-- parameter submit button -->
+        <div class="col-1">
+          <button class="btn btn-primary" id=addParametersBtn>+</button>
+        </div>
+        <!-- box for additional parameters -->
+        <div id="params"></div>
+      </div>
+      <!-- Submit button which will trigger fetch api -->
+        <button class="btn btn-primary my-3 mx-2" id="submit">Submit</button>
+      <hr>
+      <!-- Response text area -->
+      <div class="my-3 mx-2 row" id="responseTextBox">
+        <div class="col-3">
+          <label for="responseFormText" class="form-label"><b>Response</b></label>
+        </div>
+        <div class="col-9">
+          <textarea class="form-control" id="responseFormText" rows="3" >Your response will appear here</textarea>
+
+          <!-- <pre class="language-javascript">
+            <code id="responsePrism" class="language-javascript">
+              Your response will appear here
+            </code> -->
+          </pre>
+        </div>
+      </div>
+    </form>                
+    <!-- JavaScript link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="prism.js"></script>
+  </body>
+</html>
